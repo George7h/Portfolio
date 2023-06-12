@@ -65,7 +65,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Comming soon.
+Please click on this <a href="https://george7h.github.io/">link</a>, to find my live website.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
