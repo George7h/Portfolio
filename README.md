@@ -36,7 +36,7 @@
 <details>
   <summary>HTML</summary>
   <ul>
-    <li><a href="./index.html">index.html</a></li>
+    <li><a href="./index.html">Index.html</a></li>
   </ul>
 </details>
 
@@ -113,16 +113,14 @@ Open in browser to view site.
 
 - GitHub: [@sheezu900](https://github.com/sheezu900)
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Recent works**
-- [ ] **About me**
+- [ ] **Updated recent works**
+- [ ] **More animation to website**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
