@@ -36,14 +36,14 @@
 <details>
   <summary>HTML</summary>
   <ul>
-    <li><a href="./HTML&CSS\Website.html">Website.html</a></li>
+    <li><a href="./index.html">index.html</a></li>
   </ul>
 </details>
 
 <details>
   <summary>CSS</summary>
   <ul>
-    <li><a href="./HTML&CSS\style.css">Style.css</a></li>
+    <li><a href="./style.css">Style.css</a></li>
   </ul>
 </details>
 
