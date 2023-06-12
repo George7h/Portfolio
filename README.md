@@ -52,9 +52,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **The toolbar**
+- **Navbar menu**
 - **The headline section**
-- **Work cards section**
+- **Projects section**
 - **About myself section**
 - **Contact form**
 
@@ -154,6 +154,5 @@ I would like to thank my codereviewers for reviewing my code in this project dev
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
