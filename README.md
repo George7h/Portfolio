@@ -67,9 +67,7 @@
 
 Please click on this <a href="https://george7h.github.io/">link</a>, to find my live website.
 
-Kindly view my video
-
-<iframe width="500px" height="400px" srch = "./Library _ Loom - 16 June 2023.mp4">
+Kindly view my portfolio vidoe <a href="https://www.loom.com/share/fb5532d1f9cf4a95b309e97bad950a28?sid=d811783f-22e1-4eb5-a893-fa8bdeefcfb5">on this link</a>.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
