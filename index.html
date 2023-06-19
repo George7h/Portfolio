@@ -9,18 +9,24 @@
 
 <body>
    <header>
+
+    
         <nav class="navbar">
             <a><label class="Logo">My Logo</label></a>
-            <nav><a href="#"><img class="menu"src="../HTML&CSS/icons/Union.png" alt="menu" ></a></nav>
-            <div class="menu-items">
-                </div>
+            <a href="#"><img class="menu"src="../HTML&CSS/icons/Union.png" alt="menu" ></a>
             <ul class="nav1">
                 <li class="linav"><a class="info" href="#">Portfolio</a></li>
                 <li class="linav"><a class="info" href="#about">About</a></li>
                 <li class="linav"><a class="info" href="#contact">Contact</a></li>
             </ul>
-        </div>
         </nav>
+            <div class="menu-items" onclick="toggleMenu(this)">
+                <ul class="hamburger-menu">
+                    <li class="linav"><a class="info" href="#">Portfolio</a></li>
+                    <li class="linav"><a class="info" href="#about">About</a></li>
+                    <li class="linav"><a class="info" href="#contact">Contact</a></li>
+                </ul>
+            </div>
     </header>
 
     <section class="intro">
@@ -229,6 +235,6 @@
         </form>
     </section>
 
-
+<script src="index.js"></script>
 </body>
 </html>
