@@ -129,12 +129,16 @@ button:disabled {
     font-size: 32px;
     flex-direction: column;
     z-index: 100;
-    width: 100%;
-    height: 90vh;
     overflow: hidden;
-    background: #6070ff;
     mix-blend-mode: multiply;
     color: white;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #6070ff;
+    width: 100%;
+    height: 100vh;
   }
 
   .show {
@@ -216,11 +220,18 @@ button:disabled {
   .linav {
     padding: 10px;
     color: white;
-    font-size: 15px;
+    font-size: 32px;
   }
 
   .hidden {
     display: none;
+  }
+
+  #closex {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+
   }
 
   /* .menu-items {
@@ -617,6 +628,10 @@ button:disabled {
       font-size: 20px;
       display: inline-flex;
       flex-direction: row;
+      background-color: white;
+      height: auto;
+      width: auto;
+      position: relative;
     }
 
     .linav {

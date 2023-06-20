@@ -9,18 +9,25 @@
 
 <body>
    <header>
+    <div class="maincontain">
         <div class="navbar">
             <a><label class="Logo">My Logo</label></a>
-                <div class="menutoggle" id="menutoggle">
+            <div class="menutoggle" id="menutoggle">
+                <span>
                     <a href="#"><img class="navicons" id="hamburger" src="../HTML&CSS/icons/Union.png" alt="menu" ></a>
-                    <a href="#"><img class="navicons hidden" src="../HTML&CSS/icons/close.png" alt="close" style="background-color: #344563;"></a>
-                </div>
-
+                    <a href="#"><img class="navicons hidden" src="../HTML&CSS/icons/close.png" alt="close"></a>
+                </span>
+            </div>
             <nav class="show">
                 <ul class="nav1">
-                    <li class="linav"><a href="#">Portfolio</a></li>
-                    <li class="linav"><a href="#about">About</a></li>
-                    <li class="linav"><a href="#contact">Contact</a></li>
+                    <div class="menutoggle2" id="menutoggle2">
+                        <span>
+                            <a href="#"><img class="navicons hidden" id="closex" src="../HTML&CSS/icons/close.png" alt="close"></a>
+                        </span>
+                    </div>
+                    <li class="linav"><a href="#Portfolio" class="linav">Portfolio</a></li>
+                    <li class="linav"><a href="#about" class="linav">About</a></li>
+                    <li class="linav"><a href="#contact" class="linav">Contact</a></li>
                 </ul> 
             </nav>
         </div>   
@@ -41,7 +48,8 @@
     </ul>
         </div>
     </section>
-    <section class="projects">
+</div>
+    <section class="projects" id="#Portfolio">
         <div class="project project1">
             <img class="project-img" src="../HTML&CSS/Images/Tonic.svg" alt="SnapshootPortfolio">
             <div class="project_detail">
@@ -139,7 +147,7 @@
                       </div>
                   </div>
     </section>
-    <section class="about-myself">
+    <section class="about-myself" id="#about">
         
     <div class="my-self">
     <a><header class="about">About Myself</header></a>
