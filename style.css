@@ -116,14 +116,32 @@ button:disabled {
     display: flex;
     padding: 14px;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     background-color: white;
+    max-width: 768px;
+    flex-flow: column;
   }
 
   .nav1 {
+    display: flex;
     padding: 37px 43px;
     list-style: none;
-    font-size: 20px;
+    font-size: 32px;
+    flex-direction: column;
+    z-index: 100;
+    overflow: hidden;
+    mix-blend-mode: multiply;
+    color: white;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #6070ff;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .show {
     display: none;
   }
 
@@ -190,19 +208,38 @@ button:disabled {
     flex-direction: column;
   }
 
-  .menu {
+  .menutoggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     margin-top: 5px;
     height: 12px;
-    display: block;
+    display: flex;
   }
 
-  .menu-items {
+  .linav {
+    padding: 10px;
+    color: white;
+    font-size: 32px;
+  }
+
+  .hidden {
     display: none;
+  }
+
+  #closex {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+  }
+
+  /* .menu-items {
+    display: block;
     position: fixed;
     width: 100%;
     height: 100vh;
     font-size: 15px;
-  }
+  } */
 
   .social-media-icon {
     display: flex;
@@ -552,6 +589,8 @@ button:disabled {
       justify-content: space-between;
       align-items: center;
       background-color: white;
+      max-width: 100%;
+      flex-flow: row;
     }
 
     .Logo {
@@ -569,11 +608,11 @@ button:disabled {
       transform: rotate(3.142rad);
     }
 
-    .menu {
+    .menutoggle {
       display: none;
     }
 
-    .menu-items {
+    /* .menu-items {
       display: none;
       position: fixed;
       width: 100%;
@@ -581,17 +620,23 @@ button:disabled {
       font-size: 15px;
       background: rgba(96, 112, 255, 0.9);
       z-index: 100;
-    }
+    } */
 
     .nav1 {
       list-style: none;
       font-size: 20px;
       display: inline-flex;
       flex-direction: row;
+      background-color: white;
+      height: auto;
+      width: auto;
+      position: relative;
     }
 
     .linav {
       padding: 10px;
+      color: #344563;
+      font-size: 15px;
     }
 
     .info {
@@ -600,11 +645,6 @@ button:disabled {
       color: #344563;
       display: contents;
     }
-  }
-
-  .linav:hover {
-    background-color: #6070ff;
-    border-radius: 10%;
   }
 
   /* Intro Section */

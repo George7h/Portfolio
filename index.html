@@ -9,18 +9,28 @@
 
 <body>
    <header>
-        <nav class="navbar">
+    <div class="maincontain">
+        <div class="navbar">
             <a><label class="Logo">My Logo</label></a>
-            <nav><a href="#"><img class="menu"src="../HTML&CSS/icons/Union.png" alt="menu" ></a></nav>
-            <div class="menu-items">
-                </div>
-            <ul class="nav1">
-                <li class="linav"><a class="info" href="#">Portfolio</a></li>
-                <li class="linav"><a class="info" href="#about">About</a></li>
-                <li class="linav"><a class="info" href="#contact">Contact</a></li>
-            </ul>
-        </div>
-        </nav>
+            <div class="menutoggle" id="menutoggle">
+                <span>
+                    <a href="#"><img class="navicons" id="hamburger" src="../HTML&CSS/icons/Union.png" alt="menu" ></a>
+                    <a href="#"><img class="navicons hidden" src="../HTML&CSS/icons/close.png" alt="close"></a>
+                </span>
+            </div>
+            <nav class="show">
+                <ul class="nav1">
+                    <div class="menutoggle2" id="menutoggle2">
+                        <span>
+                            <a href="#"><img class="navicons hidden" id="closex" src="../HTML&CSS/icons/close.png" alt="close"></a>
+                        </span>
+                    </div>
+                    <li class="linav"><a href="#Portfolio" class="linav">Portfolio</a></li>
+                    <li class="linav"><a href="#about" class="linav">About</a></li>
+                    <li class="linav"><a href="#contactForm" class="linav">Contact</a></li>
+                </ul> 
+            </nav>
+        </div>   
     </header>
 
     <section class="intro">
@@ -38,7 +48,8 @@
     </ul>
         </div>
     </section>
-    <section class="projects">
+</div>
+    <section class="projects" id="Portfolio">
         <div class="project project1">
             <img class="project-img" src="../HTML&CSS/Images/Tonic.svg" alt="SnapshootPortfolio">
             <div class="project_detail">
@@ -136,7 +147,7 @@
                       </div>
                   </div>
     </section>
-    <section class="about-myself">
+    <section class="about-myself" id="about">
         
     <div class="my-self">
     <a><header class="about">About Myself</header></a>
@@ -229,6 +240,6 @@
         </form>
     </section>
 
-
+<script src="index.js"></script>
 </body>
 </html>
