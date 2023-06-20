@@ -9,24 +9,21 @@
 
 <body>
    <header>
-
-    
-        <nav class="navbar">
+        <div class="navbar">
             <a><label class="Logo">My Logo</label></a>
-            <a href="#"><img class="menu"src="../HTML&CSS/icons/Union.png" alt="menu" ></a>
-            <ul class="nav1">
-                <li class="linav"><a class="info" href="#">Portfolio</a></li>
-                <li class="linav"><a class="info" href="#about">About</a></li>
-                <li class="linav"><a class="info" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-            <div class="menu-items" onclick="toggleMenu(this)">
-                <ul class="hamburger-menu">
-                    <li class="linav"><a class="info" href="#">Portfolio</a></li>
-                    <li class="linav"><a class="info" href="#about">About</a></li>
-                    <li class="linav"><a class="info" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+                <div class="menutoggle" id="menutoggle">
+                    <a href="#"><img class="navicons" id="hamburger" src="../HTML&CSS/icons/Union.png" alt="menu" ></a>
+                    <a href="#"><img class="navicons hidden" src="../HTML&CSS/icons/close.png" alt="close" style="background-color: #344563;"></a>
+                </div>
+
+            <nav class="show">
+                <ul class="nav1">
+                    <li class="linav"><a href="#">Portfolio</a></li>
+                    <li class="linav"><a href="#about">About</a></li>
+                    <li class="linav"><a href="#contact">Contact</a></li>
+                </ul> 
+            </nav>
+        </div>   
     </header>
 
     <section class="intro">
