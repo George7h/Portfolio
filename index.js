@@ -8,27 +8,27 @@ const hamburger = document.querySelector('#hamburger');
 
 
 menutoggle.addEventListener('click', () => {
-  nav.classList.toggle('show');
-  navicons.forEach((icon) => {
-    icon.classList.toggle('hidden');
-  });
+	nav.classList.toggle('show');
+	navicons.forEach((icon) => {
+		icon.classList.toggle('hidden');
+	});
 });
 
 menutoggle2.addEventListener('click', () => {
-  nav.classList.toggle('show');
-  navicons.forEach((icon) => {
-    icon.classList.toggle('hidden');
-  });
+	nav.classList.toggle('show');
+	navicons.forEach((icon) => {
+		icon.classList.toggle('hidden');
+	});
 });
 
 window.addEventListener('resize', () => {
-  if (document.body.clientWidth > 768) {
-    nav.classList.remove('show');
-    navicons.forEach((icon) => {
-      icon.classList.add('hidden');
-    });
-    hamburger.classList.remove('hidden');
-  }
+	if (document.body.clientWidth > 768) {
+		nav.classList.remove('show');
+		navicons.forEach((icon) => {
+			icon.classList.add('hidden');
+		});
+		hamburger.classList.remove('hidden');
+	}
 });
 
 
@@ -68,7 +68,7 @@ function validateEmail(input, requiredMsg, invalidMsg) {
 		return false;
 	}
 	// validate email format
-  const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+	const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
 	const email = input.value.trim();
 	if (!emailRegex.test(email)) {
@@ -83,3 +83,15 @@ const NAME_REQUIRED = "Please enter your name";
 const EMAIL_REQUIRED = "Please enter your email";
 const EMAIL_INVALID = "Please enter your address with lowercases";
 
+form.addEventListener("submit", function (event) {
+	// stop form submission
+	event.preventDefault();
+
+	// validate the form
+	let nameValid = hasValue(form.elements["name"], NAME_REQUIRED);
+	let emailValid = validateEmail(form.elements["email"], EMAIL_REQUIRED, EMAIL_INVALID);
+	// if valid, submit the form.
+	if (nameValid && emailValid) {
+		form.submit();
+	}
+});
