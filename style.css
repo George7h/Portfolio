@@ -430,10 +430,9 @@ button:disabled {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 12px;
       width: 100%;
 
-      .fields {
+      .field {
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -451,6 +450,28 @@ button:disabled {
           font-size: 17px;
           line-height: 20px;
         }
+
+        #name {
+          border: 1px solid #cfd8dc;
+          border-radius: 8px;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 20px;
+          color: #172b4d;
+          padding: 15px 15px;
+          font-family: "Poppins", sans-serif;
+        }
+
+        #email {
+          border: 1px solid #cfd8dc;
+          border-radius: 8px;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 20px;
+          color: #172b4d;
+          padding: 15px 15px;
+          font-family: "Poppins", sans-serif;
+        }
       }
 
       .textArea {
@@ -464,6 +485,7 @@ button:disabled {
         font-size: 15px;
         line-height: 24px;
         color: #b3bac5;
+        font-family: "Poppins", sans-serif;
       }
 
       .submit_button {
@@ -476,6 +498,7 @@ button:disabled {
         font-weight: bold;
         font-size: 17px;
         line-height: 24px;
+        font-family: "Poppins", sans-serif;
       }
 
       .submit_button:hover {
@@ -842,10 +865,9 @@ button:disabled {
       gap: 27px;
       width: 447px;
 
-      .fields {
+      .field {
         display: flex;
         flex-direction: column;
-        gap: 27px;
         border: none;
         width: 100%;
 
@@ -859,6 +881,18 @@ button:disabled {
           font-weight: 400;
           font-size: 17px;
           line-height: 20px;
+        }
+
+        #email {
+          border: 1px solid #cfd8dc;
+          border-radius: 8px;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 20px;
+          color: #172b4d;
+          padding: 15px 15px;
+          font-family: "Poppins", sans-serif;
+          margin-bottom: 0;
         }
       }
 
