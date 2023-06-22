@@ -154,5 +154,6 @@ if (storageAvailable("localStorage")) {
       document.getElementById('message').value = formData.message;
     }
   }
-
+  loadFormData();
+  document.getElementById('submitBtn').addEventListener('click', saveFormData);
 }
