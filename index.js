@@ -88,3 +88,71 @@ form.addEventListener('submit', (event) => {
     form.submit();
   }
 });
+
+
+// Store and preserve local data
+
+
+// Check if localStorage is supported by the browser
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      // everything except Firefox
+      (e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}
+if (storageAvailable("localStorage")) {
+  // Yippee! We can use localStorage awesomeness
+
+  function saveFormData() {
+  // Create an object to store the form data
+  var formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  };
+
+  // Convert formData to a JSON string
+  var jsonData = JSON.stringify(formData);
+
+  // Store JSON string in localStorage
+  localStorage.setItem('formData', jsonData);
+}
+
+// Load and pre form data
+  function loadFormData() {
+    // Get string from local storage
+    var jsonData = localStorage.getItem('formData');
+
+    // Check stored data
+    if (jsonData) {
+      // Convert JSON string to an object
+      var formData = JSON.parse(jsonData);
+
+      // Pre-fill the inputs with the stored data
+      document.getElementById('name').value = formData.name;
+      document.getElementById('email').value = formData.email;
+      document.getElementById('message').value = formData.message;
+    }
+  }
+
+}
