@@ -230,14 +230,19 @@
                 I’d love to help with it!
             </p>
         </div>
-        <form class="form" action="https://formspree.io/f/xnqykblo" method="POST">
-                    <fieldset class="fields">
-                        <input type="text" class="input" name="name" placeholder="Name and Surname" maxlength="30" required>
-                        <input type="email" class="input" name="email" placeholder="Email" required>
-                    </fieldset>
-                    <textarea name="message" maxlength="500" rows="6" class="textArea" placeholder="Write your message here.."required></textarea>
-                    <button type="submit" class="submit_button">Get in touch</button>
+        <form class="form" action="https://formspree.io/f/xnqykblo" id="form1" method="post">
+            <div class="field">
+                <input type="text" id="name" name="name" placeholder="Name and Surname" maxlength="30" />
+                <small></small>
+            </div>
+            <div class="field">
+                <input type="text" id="email" name="email" placeholder="Email" />
+                <textarea name="message" maxlength="500" rows="6" class="textArea" placeholder="Write your message here.."required></textarea>
+                <small></small>
+            </div>
+                <button type="submit" class="submit_button">Get in touch</button>
         </form>
+
     </section>
 
 <script src="index.js"></script>
