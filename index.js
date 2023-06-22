@@ -119,40 +119,42 @@ function storageAvailable(type) {
   }
 }
 
+function saveFormData() {
+  // Create an object to store the form data
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
+  };
+
+  // Convert formData to a JSON string
+  const jsonData = JSON.stringify(formData);
+
+  // Store JSON string in localStorage
+  localStorage.setItem('formData', jsonData);
+}
+
+function loadFormData() {
+  // Get string from local storage
+  const jsonData = localStorage.getItem('formData');
+
+  // Check stored data
+  if (jsonData) {
+    // Convert JSON string to an object
+    const formData = JSON.parse(jsonData);
+
+    // Pre-fill the inputs with the stored data
+    document.getElementById('name').value = formData.name;
+    document.getElementById('email').value = formData.email;
+    document.getElementById('message').value = formData.message;
+  }
+}
+
 if (storageAvailable('localStorage')) {
   // Yippee! We can use localStorage awesomeness
 
-  function saveFormData() {
-  // Create an object to store the form data
-    const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value,
-    };
-
-    // Convert formData to a JSON string
-    const jsonData = JSON.stringify(formData);
-
-    // Store JSON string in localStorage
-    localStorage.setItem('formData', jsonData);
-  }
-
   // Load and pre form data
-  function loadFormData() {
-    // Get string from local storage
-    const jsonData = localStorage.getItem('formData');
 
-    // Check stored data
-    if (jsonData) {
-      // Convert JSON string to an object
-      const formData = JSON.parse(jsonData);
-
-      // Pre-fill the inputs with the stored data
-      document.getElementById('name').value = formData.name;
-      document.getElementById('email').value = formData.email;
-      document.getElementById('message').value = formData.message;
-    }
-  }
   loadFormData();
 
   document.getElementById('submitBtn').addEventListener('click', saveFormData);
