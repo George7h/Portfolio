@@ -152,3 +152,71 @@ inputFields.forEach((input) => {
 if (storageAvailable('localStorage')) {
   fillFields();
 }
+
+// Projects
+
+const project = [
+  { id:1,
+    project: "Project1",
+    Image: '',
+    title: 'Tonic',
+    history:{
+      client: 'CANOPY',
+      tech: 'Backend Dev',
+      date: 2015,
+    },
+    description: [
+      'A daily selection of privately personalized reads; no accounts or sign-ups required.'
+    ],
+    tags: {
+      html:'HTML',
+      css: 'CSS',
+      javascript:'JavaScript',
+    },
+    details: 'See project',
+    liveLink: 'https://george7h.github.io/',
+    sourceCode: 'https://github.com/George7h/George7h.github.io'
+  },
+  { id:2,
+    project: "Project2",
+    Image: '',
+    title: 'Tonic',
+    history:{
+      client: 'CANOPY',
+      tech: 'Backend Dev',
+      date: 2015,
+    },
+    description: [
+      'A daily selection of privately personalized reads; no accounts or sign-ups required.'
+    ],
+    tags: {
+      html:'HTML',
+      css: 'CSS',
+      javascript:'JavaScript',
+    },
+    details: 'See project',
+    liveLink: 'https://george7h.github.io/',
+    sourceCode: 'https://github.com/George7h/George7h.github.io'
+  },
+  { id:3,
+    project: "Project3",
+    Image: '',
+    title: 'Tonic',
+    history:{
+      client: 'CANOPY',
+      tech: 'Backend Dev',
+      date: 2015,
+    },
+    description: [
+      'A daily selection of privately personalized reads; no accounts or sign-ups required.'
+    ],
+    tags: {
+      html:'HTML',
+      css: 'CSS',
+      javascript:'JavaScript',
+    },
+    details: 'See project',
+    liveLink: 'https://george7h.github.io/',
+    sourceCode: 'https://github.com/George7h/George7h.github.io'
+  },
+  ];
