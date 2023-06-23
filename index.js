@@ -118,44 +118,37 @@ function storageAvailable(type) {
     );
   }
 }
-
+// Save form data to localally
 function saveFormData() {
-  // Create an object to store the form data
   const formData = {
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
     message: document.getElementById('message').value,
   };
 
-  // Convert formData to a JSON string
-  const jsonData = JSON.stringify(formData);
-
-  // Store JSON string in localStorage
-  localStorage.setItem('formData', jsonData);
+  localStorage.setItem('formData', JSON.stringify(formData));
 }
 
-function loadFormData() {
-  // Get string from local storage
-  const jsonData = localStorage.getItem('formData');
+// Fill form fields with data gathered from local storage
+function fillFields() {
+  const formData = localStorage.getItem('formData');
 
-  // Check stored data
-  if (jsonData) {
-    // Convert JSON string to an object
-    const formData = JSON.parse(jsonData);
-
-    // Pre-fill the inputs with the stored data
-    document.getElementById('name').value = formData.name;
-    document.getElementById('email').value = formData.email;
-    document.getElementById('message').value = formData.message;
+  if (formData) {
+    const parsedData = JSON.parse(formData);
+    document.getElementById('name').value = parsedData.name;
+    document.getElementById('email').value = parsedData.email;
+    document.getElementById('message').value = parsedData.message;
   }
 }
 
+// Event listener for form input changes
+const inputFields = document.querySelectorAll('input, textarea');
+inputFields.forEach((input) => {
+  input.addEventListener('input', saveFormData);
+});
+
+// Load form data from local storage on page load
+
 if (storageAvailable('localStorage')) {
-  // Yippee! We can use localStorage awesomeness
-
-  // Load and pre form data
-
-  loadFormData();
-
-  document.getElementById('submitBtn').addEventListener('click', saveFormData);
+  fillFields();
 }
