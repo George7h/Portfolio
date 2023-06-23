@@ -88,3 +88,67 @@ form.addEventListener('submit', (event) => {
     form.submit();
   }
 });
+
+// Store and preserve local data
+
+// Check if localStorage is supported by the browser
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = '__storage_test__';
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException
+      // everything except Firefox
+      && (e.code === 22
+        // Firefox
+        || e.code === 1014
+        // test name field too, because code might not be present
+        // everything except Firefox
+        || e.name === 'QuotaExceededError'
+        // Firefox
+        || e.name === 'NS_ERROR_DOM_QUOTA_REACHED')
+      // acknowledge QuotaExceededError only if there's something already stored
+      && storage
+      && storage.length !== 0
+    );
+  }
+}
+// Save form data to localally
+function saveFormData() {
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
+  };
+
+  localStorage.setItem('formData', JSON.stringify(formData));
+}
+
+// Fill form fields with data gathered from local storage
+function fillFields() {
+  const formData = localStorage.getItem('formData');
+
+  if (formData) {
+    const parsedData = JSON.parse(formData);
+    document.getElementById('name').value = parsedData.name;
+    document.getElementById('email').value = parsedData.email;
+    document.getElementById('message').value = parsedData.message;
+  }
+}
+
+// Event listener for form input changes
+const inputFields = document.querySelectorAll('input, textarea');
+inputFields.forEach((input) => {
+  input.addEventListener('input', saveFormData);
+});
+
+// Load form data from local storage on page load
+
+if (storageAvailable('localStorage')) {
+  fillFields();
+}
