@@ -152,3 +152,192 @@ inputFields.forEach((input) => {
 if (storageAvailable('localStorage')) {
   fillFields();
 }
+
+// Projects
+
+const projects = [{
+  id: 1,
+  card: 'project1',
+  image: './HTML&CSS/Images/Tonic.svg',
+  Title: 'Tonic',
+  history: {
+    client: 'CANOPY',
+    tech: 'Backend Dev',
+    year: 2015,
+  },
+  Discription: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
+  tags: {
+    html: 'HTML',
+    css: 'CSS',
+    javascript: 'JavaScript',
+  },
+  button: 'myBtn',
+},
+{
+  id: 2,
+  card: 'project2',
+  image: './HTML&CSS/Images/arti.svg',
+  Title: 'Multi-Post',
+  history: {
+    client: 'CANOPY',
+    tech: 'Backend Dev',
+    year: 2015,
+  },
+  Discription: 'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
+  tags: {
+    html: 'HTML',
+    css: 'CSS',
+    javascript: 'JavaScript',
+  },
+  button: 'myBtn',
+},
+{
+  id: 3,
+  card: 'project3',
+  image: './HTML&CSS/Images/joga.svg',
+  Title: 'Tonic',
+  history: {
+    client: 'CANOPY',
+    tech: 'Backend Dev',
+    year: 2015,
+  },
+  Discription: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
+  tags: {
+    html: 'HTML',
+    css: 'CSS',
+    javascript: 'JavaScript',
+  },
+  button: 'myBtn',
+},
+];
+
+const section = document.getElementById('projects');
+
+const projectMethod = () => {
+  projects.map((card) => {
+    const project = document.createElement('div');
+    project.classList.add('project');
+    project.classList.add(card.card);
+    project.innerHTML = `<img
+              class="project_image "
+              src=${card.image}
+              alt="Project image"
+              />
+              <div class="project_detail">
+              <div class="project-title">
+              <h2>${card.Title}</h2>
+                <div class="project-history">
+                  <div class="project-his-det"><p>${card.history.client}</p></div>
+                <div>
+                <img src="./HTML&CSS/Images/Counter.svg"/>
+                </div>
+                <div class="project-his-det">
+                <p>${card.history.tech}</p>
+                  </div>
+                  <div>
+                  <img src="./HTML&CSS/Images/Counter.svg"/>
+                   </div>
+                  <div class="project-his-det"><p>${card.history.year}</p></div>
+                </div>
+              </div>
+              <div class="project_discription">
+              <p>${card.Discription}</p>
+              </div>
+               <div class="project-tags">
+                <div class="lang-tag">
+                 <span class="spanning">${card.tags.html}</span>
+                 </div>
+                  <div class="lang-tag">
+                      <span class="spanning">${card.tags.css}</span>
+                 </div>
+                 <div class="lang-tag">
+                         <span class="spanning">${card.tags.javascript}</span>
+                 </div>
+               </div>
+              <div class="project_buttons">
+              <button onclick="button(${card.id})" class="btn" id="btn" type="button">See Project</button>
+              </div>
+               </div>`;
+
+    return section.appendChild(project);
+  });
+};
+
+projectMethod();
+
+const modal = document.getElementById('model');
+const btn = document.getElementById('btn');
+
+function button(id) {
+  modal.style.display = 'flex';
+  const card = projects.find((card) => card.id === id);
+  const project = document.createElement('div');
+  project.classList.add('modelsection');
+  project.classList.add(card.card);
+  project.innerHTML = `<div class="header">
+               <div>
+              <h2>${card.Title}</h2>
+               <div class="project_history">
+                 <div class="card_history_detaill_model"><p>${card.history.client}</p></div>
+                <div>
+                       <img src="./HTML&CSS/Images/Counter.svg"/>
+                </div>
+                   <div class="project-his-det">
+                  <p>${card.history.tech}</p>
+                </div>
+                  <div>
+                  <img src="./HTML&CSS/Images/Counter.svg"/>
+                 </div>
+                 <div class="project-his-det"><p>${card.history.year}</p></div>
+               </div>
+               </div>
+              
+              <span id="modelCloseIcon">
+                    <img src="./HTML&CSS/icons/close popup.svg" alt="close button">
+              </span>
+            </a>
+          </div>
+       <div class="modelimage">
+            <img
+               class="project_image_model"
+                src=${card.image}
+             alt="Project image"/>
+             </div>
+             <div class="modeldiscription">
+              <div class="project_discription">
+               <p>
+                   ${card.Discription}
+                 </p>
+            </div>
+              <div class="project-tags">
+                <div class="modeltags">
+                 <div class="lang-tag">
+                   <span class="spanning">${card.tags.html}</span>
+                </div>
+                <div class="lang-tag">
+                 <span class="spanning">${card.tags.css}</span>
+                </div>
+                <div class="lang-tag">
+                  <span class="spanning">${card.tags.javascript}</span>
+                </div>
+              </div>
+              <hr class="hr">
+              <div class="project_buttons">
+                    <button class="modelbtn" type="button"> See Live <img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>
+                     <button class="modelbtn" type="button"> See source <img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>
+           </div>
+            </div>
+         </div>`;
+
+  modal.appendChild(project);
+  setTimeout(() => {
+    const span = document.getElementById('modelCloseIcon');
+    span.onclick = function Poping() {
+      modal.style.display = 'none';
+      modal.removeChild(project);
+    };
+  }, 50);
+}
+let id;
+const cardID = projects.find((card) => card.id === id);
+btn.onclick = button(cardID.id);
