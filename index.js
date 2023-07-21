@@ -158,7 +158,7 @@ if (storageAvailable('localStorage')) {
 const projects = [{
   id: 1,
   card: 'project1',
-  image: './HTML&CSS/Images/Tonic.svg',
+  image: './HTML&CSS/Images/Capstone1.svg',
   Title: 'Tonic',
   history: {
     client: 'CANOPY',
@@ -172,6 +172,8 @@ const projects = [{
     javascript: 'JavaScript',
   },
   button: 'myBtn',
+  codeSource: 'https://github.com/George7h/Module-1-capstone-project',
+  SeeLive: 'https://george7h.github.io/Module-1-capstone-project/index.html',
 },
 {
   id: 2,
@@ -323,8 +325,8 @@ function button(id) {
               </div>
               <hr class="hr">
               <div class="project_buttons">
-                    <button class="modelbtn" type="button"> See Live <img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>
-                     <button class="modelbtn" type="button"> See source <img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>
+                    <button class="modelbtn" type="button"><a href="${card.SeeLive}"> See Live </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>
+                     <button class="modelbtn" type="button"><a href="${card.codeSource}"> See source </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>
            </div>
             </div>
          </div>`;
