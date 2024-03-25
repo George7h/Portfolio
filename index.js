@@ -372,12 +372,12 @@ function toggleDropdown() {
     // If dropdown is currently visible, hide it and show the hr
     dropdown.style.display = 'none';
     hrElement.style.display = 'block';
-    dropdownIcon.src = '../HTML&CSS/icons/active.png';
+    dropdownIcon.src = './HTML&CSS/icons/active.png';
 } else {
     // If dropdown is currently hidden, show it and hide the hr
     dropdown.style.display = 'flex';
     hrElement.style.display = 'none';
-    dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+    dropdownIcon.src = './HTML&CSS/icons/Disabled.png';
 }
 }
 
@@ -390,12 +390,12 @@ function toggleDropdown2() {
       // If dropdown is currently visible, hide it and show the hr
       dropdown.style.display = 'none';
       hrElement.style.display = 'block';
-      dropdownIcon.src = '../HTML&CSS/icons/active.png';
+      dropdownIcon.src = './HTML&CSS/icons/active.png';
   } else {
       // If dropdown is currently hidden, show it and hide the hr
       dropdown.style.display = 'flex';
       hrElement.style.display = 'none';
-      dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+      dropdownIcon.src = './HTML&CSS/icons/Disabled.png';
   }
 }
 
@@ -409,12 +409,12 @@ function toggleDropdown3() {
       // If dropdown is currently visible, hide it and show the hr
       dropdown.style.display = 'none';
       hrElement.style.display = 'block';
-      dropdownIcon.src = '../HTML&CSS/icons/active.png';
+      dropdownIcon.src = './HTML&CSS/icons/active.png';
   } else {
       // If dropdown is currently hidden, show it and hide the hr
       dropdown.style.display = 'flex';
       hrElement.style.display = 'none';
-      dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+      dropdownIcon.src = './HTML&CSS/icons/Disabled.png';
   }
 }
 
@@ -427,12 +427,12 @@ function toggleDropdown4() {
       // If dropdown is currently visible, hide it and show the hr
       dropdown.style.display = 'none';
       hrElement.style.display = 'block';
-      dropdownIcon.src = '../HTML&CSS/icons/active.png';
+      dropdownIcon.src = './HTML&CSS/icons/active.png';
   } else {
       // If dropdown is currently hidden, show it and hide the hr
       dropdown.style.display = 'flex';
       hrElement.style.display = 'none';
-      dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+      dropdownIcon.src = './HTML&CSS/icons/Disabled.png';
   }
 }
 
@@ -479,11 +479,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (dropdown.style.display === 'flex') {
             // If dropdown is currently visible, hide it
             dropdown.style.display = 'none';
-            icon.src = '../HTML&CSS/icons/active.png';
+            icon.src = './HTML&CSS/icons/active.png';
         } else {
             // If dropdown is currently hidden, show it
             dropdown.style.display = 'flex';
-            icon.src = '../HTML&CSS/icons/Disabled.png';
+            icon.src = './HTML&CSS/icons/Disabled.png';
         }
     }
 });});
