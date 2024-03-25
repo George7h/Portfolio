@@ -18,24 +18,18 @@ menutoggle2.addEventListener('click', () => {
   });
 });
 
-window.addEventListener('resize', () => {
-  if (document.body.clientWidth > 768) {
-    nav.classList.remove('show');
-    navicons.forEach((icon) => {
-      icon.classList.add('hidden');
+const menuItems = document.querySelectorAll('.linav a');
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Close the menu by simulating a click on the menu toggle button
+        menutoggle.click();
     });
-    hamburger.classList.remove('hidden');
-  }
 });
 
-// // From this point is to validate the form data
-
-// show a message with a type of the input
+// Form validation functions
 function showMessage(input, message, type) {
-  // get the small element and set the message
   const msg = input.parentNode.querySelector('small');
   msg.innerText = message;
-  // update the class for the input
   input.className = type ? 'success' : 'error';
   return type;
 }
@@ -56,11 +50,9 @@ function hasValue(input, message) {
 }
 
 function validateEmail(input, requiredMsg, invalidMsg) {
-  // check if the value is not empty
   if (!hasValue(input, requiredMsg)) {
     return false;
   }
-  // validate email format
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
   const email = input.value.trim();
@@ -77,21 +69,16 @@ const EMAIL_REQUIRED = 'Please enter your email';
 const EMAIL_INVALID = 'Please enter your address with lowercases';
 
 form.addEventListener('submit', (event) => {
-  // stop form submission
   event.preventDefault();
 
-  // validate the form
   const nameValid = hasValue(form.elements.name, NAME_REQUIRED);
   const emailValid = validateEmail(form.elements.email, EMAIL_REQUIRED, EMAIL_INVALID);
-  // if valid, submit the form.
   if (nameValid && emailValid) {
     form.submit();
   }
 });
 
-// Store and preserve local data
-
-// Check if localStorage is supported by the browser
+// Local Storage Functions
 function storageAvailable(type) {
   let storage;
   try {
@@ -102,23 +89,14 @@ function storageAvailable(type) {
     return true;
   } catch (e) {
     return (
-      e instanceof DOMException
-      // everything except Firefox
-      && (e.code === 22
-        // Firefox
-        || e.code === 1014
-        // test name field too, because code might not be present
-        // everything except Firefox
-        || e.name === 'QuotaExceededError'
-        // Firefox
-        || e.name === 'NS_ERROR_DOM_QUOTA_REACHED')
-      // acknowledge QuotaExceededError only if there's something already stored
-      && storage
-      && storage.length !== 0
+      e instanceof DOMException &&
+      (e.code === 22 || e.code === 1014 || e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+      storage &&
+      storage.length !== 0
     );
   }
 }
-// Save form data to localally
+
 function saveFormData() {
   const formData = {
     name: document.getElementById('name').value,
@@ -129,7 +107,6 @@ function saveFormData() {
   localStorage.setItem('formData', JSON.stringify(formData));
 }
 
-// Fill form fields with data gathered from local storage
 function fillFields() {
   const formData = localStorage.getItem('formData');
 
@@ -141,7 +118,6 @@ function fillFields() {
   }
 }
 
-// Event listener for form input changes
 const inputFields = document.querySelectorAll('input, textarea');
 inputFields.forEach((input) => {
   input.addEventListener('input', saveFormData);
@@ -158,18 +134,19 @@ if (storageAvailable('localStorage')) {
 const projects = [{
   id: 1,
   card: 'project1',
-  image: './HTML&CSS/Images/Capstone1.svg',
-  Title: 'Tonic',
+  image: './HTML&CSS/Images/module1capstone.svg',
+  Title: 'NPConnect',
   history: {
-    client: 'CANOPY',
-    tech: 'Backend Dev',
-    year: 2015,
+    client: 'Plain Webpage',
+    tech: 'Frontend Development',
+    year: 2023,
   },
-  Discription: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
+  Discription: 'This a website to connect people that are interested in the role-playing game: Dungeons and Dragons. This website will have awesome features. Finding awesome Dungeon Masters, find nearby players and much more. Check it out.',
   tags: {
     html: 'HTML',
     css: 'CSS',
     javascript: 'JavaScript',
+    ruby: '',
   },
   button: 'myBtn',
   codeSource: 'https://github.com/George7h/Module-1-capstone-project',
@@ -178,38 +155,84 @@ const projects = [{
 {
   id: 2,
   card: 'project2',
-  image: './HTML&CSS/Images/arti.svg',
-  Title: 'Multi-Post',
+  image: './HTML&CSS/Images/Javascriptcapstone.svg',
+  Title: 'MGSeries',
   history: {
-    client: 'CANOPY',
-    tech: 'Backend Dev',
-    year: 2015,
+    client: 'Series List App with comments and likes',
+    tech: 'Frontend Development',
+    year: 2023,
   },
-  Discription: 'Experimental content creation feature that allows users to add to an existing story over the course of a day without spamming their friends.',
+  Discription: 'This a website that displays a list of series retrieved from an API. The UI is designed for a user to be able to like a series and also view extra details about it and add comments.',
   tags: {
     html: 'HTML',
     css: 'CSS',
     javascript: 'JavaScript',
+    ruby: '',
   },
   button: 'myBtn',
+  codeSource: 'https://github.com/George7h/JavaScript-Capstone',
 },
 {
   id: 3,
   card: 'project3',
-  image: './HTML&CSS/Images/joga.svg',
-  Title: 'Tonic',
+  image: './HTML&CSS/Images/Investgrow-HUB3capstone.svg',
+  Title: 'InvestGrow Hub',
   history: {
-    client: 'CANOPY',
-    tech: 'Backend Dev',
-    year: 2015,
+    client: 'Investment monitoring App',
+    tech: 'Frontend Development',
+    year: 2023,
   },
-  Discription: 'A daily selection of privately personalized reads;no accounts or sign-ups required.',
+  Discription: 'This is a React and Redux project that leverages real live data from Financial modeling prep API. My mission is to develop a mobile web application that helps people monitor stock prices.',
   tags: {
     html: 'HTML',
     css: 'CSS',
     javascript: 'JavaScript',
+    ruby: '',
   },
   button: 'myBtn',
+  codeSource: 'https://github.com/George7h/investgrow-hub',
+  SeeLive: 'https://investgrow-hub.onrender.com/',
+},
+{
+  id: 4,
+  card: 'project4',
+  image: './HTML&CSS/Images/Budgetapp.svg',
+  Title: 'Budgetto',
+  history: {
+    client: 'Budgeting App',
+    tech: 'Backend Development',
+    year: 2024,
+  },
+  Discription: 'This is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.',
+  tags: {
+    html: 'HTML',
+    css: 'CSS',
+    javascript: 'JavaScript',
+    ruby: 'Ruby',
+  },
+  button: 'myBtn',
+  codeSource: 'https://github.com/George7h/Budget-App',
+  SeeLive: 'https://budgettobudgetbpp.onrender.com/',
+},
+{
+  id: 5,
+  card: 'project5',
+  image: './HTML&CSS/Images/Projectimagedevices.jpg',
+  Title: 'StaySphere',
+  history: {
+    client: 'Hotel booking System',
+    tech: ['Backend-',  ' Frontend Development'],
+    year: 2024,
+  },
+  Discription: 'This app built with Rails and React on two different apps. This application enables users to signin/signup create hotels/AirBnb listings and create reservations on each hotel.',
+  tags: {
+    html: 'HTML',
+    css: 'CSS',
+    javascript: 'JavaScript',
+    ruby: 'Ruby',
+  },
+  button: 'myBtn',
+  codeSource: 'https://github.com/George7h/final-capstone-react-front-end',
 },
 ];
 
@@ -247,13 +270,16 @@ const projectMethod = () => {
               </div>
                <div class="project-tags">
                 <div class="lang-tag">
-                 <span class="spanning">${card.tags.html}</span>
+                 ${card.tags.html ? `<span class="spanning">${card.tags.html}</span>` : ''}
                  </div>
                   <div class="lang-tag">
-                      <span class="spanning">${card.tags.css}</span>
+                      ${card.tags.css ? `<span class="spanning">${card.tags.css}</span>` : ''}
                  </div>
                  <div class="lang-tag">
-                         <span class="spanning">${card.tags.javascript}</span>
+                         ${card.tags.javascript ? `<span class="spanning">${card.tags.javascript}</span>` : ''}
+                 </div>
+                 <div class="lang-tag">
+                         ${card.tags.ruby ? `<span class="spanning">${card.tags.ruby}</span>` : ''}
                  </div>
                </div>
               <div class="project_buttons">
@@ -313,20 +339,15 @@ function button(id) {
             </div>
               <div class="project-tags">
                 <div class="modeltags">
-                 <div class="lang-tag">
-                   <span class="spanning">${card.tags.html}</span>
-                </div>
-                <div class="lang-tag">
-                 <span class="spanning">${card.tags.css}</span>
-                </div>
-                <div class="lang-tag">
-                  <span class="spanning">${card.tags.javascript}</span>
-                </div>
+                 ${card.tags.html ? `<div class="lang-tag"><span class="spanning">${card.tags.html}</span></div>` : ''}
+                 ${card.tags.css ? `<div class="lang-tag"><span class="spanning">${card.tags.css}</span></div>` : ''}
+                 ${card.tags.javascript ? `<div class="lang-tag"><span class="spanning">${card.tags.javascript}</span></div>` : ''}
+                 ${card.tags.ruby ? `<div class="lang-tag"><span class="spanning">${card.tags.ruby}</span></div>` : ''}
               </div>
               <hr class="hr">
               <div class="project_buttons">
-                    <button class="modelbtn" type="button"><a href="${card.SeeLive}"> See Live </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>
-                     <button class="modelbtn" type="button"><a href="${card.codeSource}"> See source </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>
+                    <button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.SeeLive}"> See Live </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>
+                     <button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.codeSource}"> See source </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>
            </div>
             </div>
          </div>`;
@@ -340,6 +361,129 @@ function button(id) {
     };
   }, 50);
 }
-let id;
-const cardID = projects.find((card) => card.id === id);
-btn.onclick = button(cardID.id);
+
+
+function toggleDropdown() {
+  var dropdown = document.querySelector('.skilllist');
+  var dropdownIcon = document.querySelector('.iconskills img');
+  var hrElement = document.getElementById('skillsHr');
+
+  if (dropdown.style.display === 'flex') {
+    // If dropdown is currently visible, hide it and show the hr
+    dropdown.style.display = 'none';
+    hrElement.style.display = 'block';
+    dropdownIcon.src = '../HTML&CSS/icons/active.png';
+} else {
+    // If dropdown is currently hidden, show it and hide the hr
+    dropdown.style.display = 'flex';
+    hrElement.style.display = 'none';
+    dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+}
+}
+
+function toggleDropdown2() {
+  var dropdown = document.querySelector('.databaselist');
+  var dropdownIcon = document.querySelector('.dropdown-database img');
+  var hrElement = document.getElementById('databaseHr');
+
+  if (dropdown.style.display === 'flex') {
+      // If dropdown is currently visible, hide it and show the hr
+      dropdown.style.display = 'none';
+      hrElement.style.display = 'block';
+      dropdownIcon.src = '../HTML&CSS/icons/active.png';
+  } else {
+      // If dropdown is currently hidden, show it and hide the hr
+      dropdown.style.display = 'flex';
+      hrElement.style.display = 'none';
+      dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+  }
+}
+
+
+function toggleDropdown3() {
+  var dropdown = document.querySelector('.langlist');
+  var dropdownIcon = document.querySelector('.iconlang img');
+  var hrElement = document.getElementById('langHr');
+
+  if (dropdown.style.display === 'flex') {
+      // If dropdown is currently visible, hide it and show the hr
+      dropdown.style.display = 'none';
+      hrElement.style.display = 'block';
+      dropdownIcon.src = '../HTML&CSS/icons/active.png';
+  } else {
+      // If dropdown is currently hidden, show it and hide the hr
+      dropdown.style.display = 'flex';
+      hrElement.style.display = 'none';
+      dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+  }
+}
+
+function toggleDropdown4() {
+  var dropdown = document.querySelector('.framelist');
+  var dropdownIcon = document.querySelector('.iconframe img');
+  var hrElement = document.getElementById('frameHr');
+
+  if (dropdown.style.display === 'flex') {
+      // If dropdown is currently visible, hide it and show the hr
+      dropdown.style.display = 'none';
+      hrElement.style.display = 'block';
+      dropdownIcon.src = '../HTML&CSS/icons/active.png';
+  } else {
+      // If dropdown is currently hidden, show it and hide the hr
+      dropdown.style.display = 'flex';
+      hrElement.style.display = 'none';
+      dropdownIcon.src = '../HTML&CSS/icons/Disabled.png';
+  }
+}
+
+// Function to toggle dropdown visibility
+document.addEventListener('DOMContentLoaded', function() {
+  // Hide dropdown lists initially
+  document.querySelectorAll('.langlist, .databaselist, .skilllist, .framelist').forEach(function(dropdown) {
+      dropdown.style.display = 'none';
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Hide dropdown lists initially
+    document.querySelectorAll('.langlist, .databaselist, .skilllist, .framelist').forEach(function(dropdown) {
+        dropdown.style.display = 'none';
+    });
+
+    // Event listeners for dropdown icons
+    document.querySelector('.iconskills').addEventListener('click', function() {
+        var dropdown = document.querySelector('.skilllist');
+        var icon = document.querySelector('.iconskills img');
+        toggleDropdown(dropdown, icon);
+    });
+
+    document.querySelector('.dropdown-database').addEventListener('click', function() {
+        var dropdown = document.querySelector('.databaselist');
+        var icon = document.querySelector('.dropdown-database img');
+        toggleDropdown(dropdown, icon);
+    });
+
+    document.querySelector('.iconlang').addEventListener('click', function() {
+        var dropdown = document.querySelector('.langlist');
+        var icon = document.querySelector('.iconlang img');
+        toggleDropdown(dropdown, icon);
+    });
+
+    document.querySelector('.iconframe').addEventListener('click', function() {
+        var dropdown = document.querySelector('.framelist');
+        var icon = document.querySelector('.iconframe img');
+        toggleDropdown(dropdown, icon);
+    });
+
+    // Function to toggle dropdown visibility
+    function toggleDropdown(dropdown, icon) {
+        if (dropdown.style.display === 'flex') {
+            // If dropdown is currently visible, hide it
+            dropdown.style.display = 'none';
+            icon.src = '../HTML&CSS/icons/active.png';
+        } else {
+            // If dropdown is currently hidden, show it
+            dropdown.style.display = 'flex';
+            icon.src = '../HTML&CSS/icons/Disabled.png';
+        }
+    }
+});});
