@@ -35,6 +35,7 @@ button:hover {
   border: 1px solid #7f8cff;
   background: #6070ff;
   box-shadow: 0.1px 8px 16px rgba(64, 83, 252, 0.24);
+  transition: ease-in-out 0.5s;
 }
 
 button:active {
@@ -139,9 +140,8 @@ button:disabled {
   }
 
   .Logo {
-    font-size: 18px;
-    font-weight: bold;
-    color: #6070ff;
+    width: 100px;
+    margin-top: -25px;
   }
 
   .intro {
@@ -288,6 +288,11 @@ button:disabled {
     box-sizing: border-box;
     padding: 12px;
     margin-top: 10px;
+
+    a:hover {
+      text-decoration: none;
+      color: #ffff;
+    }
   }
 
   .about {
@@ -313,7 +318,8 @@ button:disabled {
       }
 
       .lang-list {
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         gap: 12px;
         width: 100%;
 
@@ -482,6 +488,7 @@ button:disabled {
       background: white;
       border: 1px solid #def1e6;
       border-radius: 16px;
+      align-items: center;
 
       .project-img {
         display: grid;
@@ -492,6 +499,7 @@ button:disabled {
 
       .project_image {
         padding-bottom: 1rem;
+        width: 100%;
       }
 
       .project_detail {
@@ -520,10 +528,11 @@ button:disabled {
       }
 
       .project-tags {
-        display: grid;
+        display: flex;
+        flex-wrap: wrap;
         grid-auto-flow: column;
         align-items: center;
-        grid-gap: 8px;
+        grid-gap: 15px;
         justify-content: start;
       }
 
@@ -623,6 +632,26 @@ button:disabled {
             .modelbtn {
               padding: 10px 6px;
             }
+
+            .modelbtn:hover {
+              background: #6070ff;
+              box-shadow: 0.5px 8px 16px rgba(64, 83, 252, 0.24);
+              border-radius: 8px;
+              color: #ffff;
+
+              a {
+                text-decoration: none;
+                color: #ffff;
+              }
+
+              img {
+                color: #ffff;
+                background-color: #f7f7f7;
+                border-radius: 100px;
+                padding: 5px;
+                transition: ease-in-out 0.9s;
+              }
+            }
           }
 
           .lang-tag {
@@ -647,7 +676,13 @@ button:disabled {
   body {
     font-family: "Poppins", sans-serif;
     background: #f7f7f9;
-  }/* Work Section */
+  }
+
+  .show {
+    display: block;
+  }
+
+  /* Work Section */
 
   header {
     .navbar {
@@ -662,18 +697,12 @@ button:disabled {
     }
 
     .Logo {
-      color: #6070ff;
-      width: 76px;
-      height: 20px;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 20px;
-      padding-left: 50px;
+      width: 200px;
     }
 
     .Logo:hover {
-      transform: rotate(3.142rad);
+      transform: rotate(6.3rad);
+      transition: 1s;
     }
 
     .menutoggle {
@@ -989,19 +1018,21 @@ button:disabled {
   #projects {
     justify-items: center;
 
-    .project2 .project_img {
-      order: 2;
-    }
-
-    .project2 .project_detail {
-      order: 1;
-    }
-
     .project {
       grid-auto-flow: column;
       width: 80%;
       padding: 24px;
       grid-gap: 12px;
+    }
+
+    .project:nth-child(even) {
+      .project_image {
+        order: 2;
+      }
+
+      .project_detail {
+        order: 1;
+      }
     }
   }
 
@@ -1046,9 +1077,11 @@ button:disabled {
       }
 
       .modelimage {
+        width: inherit;
+
         .project_image_model {
-          width: 100%;
-          height: 50vh;
+          /* width: 100%;
+          height: 50vh; */
           object-fit: cover;
         }
       }
@@ -1097,6 +1130,24 @@ button:disabled {
 
             .modelbtn {
               padding: 4px 10px;
+            }
+
+            .modelbtn:hover {
+              background: #6070ff;
+              box-shadow: 0.5px 8px 16px rgba(64, 83, 252, 0.24);
+              border-radius: 8px;
+
+              a {
+                text-decoration: none;
+                color: #ffff;
+              }
+
+              img {
+                background-color: #f7f7f7;
+                border-radius: 20px;
+                padding: 1px;
+                transition: ease-in-out 0.9s;
+              }
             }
           }
         }
