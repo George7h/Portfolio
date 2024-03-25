@@ -11,7 +11,7 @@
    <header>
     <div class="maincontain">
         <div class="navbar">
-            <a><label class="Logo">My Logo</label></a>
+            <img class="Logo" src="./HTML&CSS/Images/Mylogo.svg">
             <div class="menutoggle" id="menutoggle">
                 <span>
                     <a href="#"><img class="navicons" id="hamburger" src="../HTML&CSS/icons/Union.png" alt="menu" ></a>
@@ -37,14 +37,12 @@
         <div class="content content1">
         <h2 class="paragraph">I'm George.<br/> Glad to see you!</h1>
         <p class="paragraph2">I'm a software developer! I can help you build a product, feature or website look through some of my work and experience! if you like what you see and have a project you need coded, don't hesitate to contact me.</p>
-        <h2 class="connect"><a href="#">LET'S CONNECT</h2></a>
+        <h2 class="connect">LET'S CONNECT</h2>
         <div>
     <ul class="social-media-icon">
         <li><a class="icon" href="https://twitter.com/GJ2H"><img src="../HTML&CSS/icons/Twitter.svg"></a></li>
         <li><a class="icon" href="https://linkedin.com/in/george-hamman-95b98224b"><img src="../HTML&CSS/icons/Linkedin icon.svg"></a></li>
         <li><a class="icon" href="https://github.com/George7h"><img src="../HTML&CSS/icons/GIT.svg"></a></li>
-        <li><a class="icon" href="#"><img src="../HTML&CSS/icons/M.svg"></a></li>
-        <li><a class="icon" href="#"><img src="../HTML&CSS/icons/Piece.svg"></a></li>
     </ul>
         </div>
     </section>
@@ -61,25 +59,23 @@
     <li><a class="icon" href="https://twitter.com/GJ2H"><img src="../HTML&CSS/icons/Twitter.svg"></a></li>
     <li><a class="icon" href="https://linkedin.com/in/george-hamman-95b98224b"><img src="../HTML&CSS/icons/Linkedin icon.svg"></a></li>
     <li><a class="icon" href="https://github.com/George7h"><img src="../HTML&CSS/icons/GIT.svg"></a></li>
-    <li><a class="icon" href="#"><img src="../HTML&CSS/icons/M.svg"></a></li>
-    <li><a class="icon" href="#"><img src="../HTML&CSS/icons/Piece.svg"></a></li>
     </ul>
-    <button class="resume" href="#">Get my resume</button>
+    <button type="button" class="resume" href="#"><a href="https://docs.google.com/document/d/1BAxzB9TYctcQUoLz3Rj_BYYBH4hG0uUxAcxY7WFPBMU/edit?usp=sharing">Get my resume</a></button>
     </div>
 
     <div class="skill-list">
         <div class="languages">
             <div class="lang-title">
                 <div class="language-title">
-                    <h4>Languange</h4>
+                    <h3>Languange</h3>
                 </div>
-                <a class="drowdown-icon">
+                <a class="drowdown-icon iconlang" onclick="toggleDropdown3()">
                     <span class="span-drop">
-                        <img src="../HTML&CSS/icons/Disabled.png">
+                        <img src="../HTML&CSS/icons/active.png">
                     </span>
                 </a>
             </div>
-                    <ul class="lang-list">
+                    <ul class="lang-list langlist">
     <li class="lang-list-item">
         <img class="list-item-image" src="../HTML&CSS/Images/skill list/js.svg">
         <a href="#">JavaScript</a>
@@ -92,36 +88,133 @@
     <li class="lang-list-item">
             <img class="list-item-image" src="../HTML&CSS/Images/skill list/css.svg">
             <a href="#">CSS</a></li>
+            <li class="lang-list-item">
+                <img class="list-item-image" src="../HTML&CSS/Images/skill list/ruby.svg">
+                <a href="#">Ruby</a></li>
                     </ul>
         </div>
-
+        <hr id="langHr" class="hr">
         <div class="languages">
             <div class="lang-title">
                 <div class="language-title">
                     <h3>Frameworks</h3>
+                    <ul class="lang-list framelist">
+                        <li class="lang-list-item">
+                            <img class="list-item-image" src="../HTML&CSS/Images/skill list/rails.svg">
+                            <a href="#">Ruby on Rails</a></li>
+                            <li class="lang-list-item">
+                                <img class="list-item-image" src="../HTML&CSS/Images/Bootstrap.svg">
+                                <a href="#">Bootstrap</a></li>
+                    </ul>
                 </div>
-                <a class="drowdown-icon">
+                <a class="drowdown-icon iconframe" onclick="toggleDropdown4()">
                     <span class="span-drop">
-                <img src="../HTML&CSS/icons/active.png">
+                        <img src="../HTML&CSS/icons/active.png">
                     </span>
                 </a>
             </div>
 
         </div>
-    <hr>
+        <hr id="frameHr" class="hr">
+    <div class="languages">
+        <div class="lang-title">
+            <div class="language-title">
+                <h3>Database management system</h3>
+                <ul class="lang-list databaselist">
+                    <li class="lang-list-item">
+                        <img class="list-item-image" src="../HTML&CSS/Images/postgres.svg">
+                        <a href="#">PostgreSQL</a></li>
+                </ul>
+            </div>
+            <a class="drowdown-icon dropdown-database" onclick="toggleDropdown2()">
+                <span class="span-drop">
+                    <img src="../HTML&CSS/icons/active.png">
+                </span>
+            </a>
+        </div>
+    </div>
+    <hr id="databaseHr" class="hr">
         <div class="languages">
             <div class="lang-title">
                 <div class="language-title">
                     <h3>Skills</h3>
+                    <ul class="lang-list skilllist">
+                        <li class="lang-list-item">
+                            Full-Stack Development
+                            </li>
+                        <li class="lang-list-item">
+                            Web Development
+                            </li>
+                            <li class="lang-list-item">
+                                Front-End Development
+                                </li>
+                                <li class="lang-list-item">
+                                    Back-End Development
+                                    </li>
+                            <li class="lang-list-item">
+                                HTML
+                                </li>
+                                <li class="lang-list-item">
+                                    CSS
+                                    </li>
+                                    <li class="lang-list-item">
+                                        JavaScript
+                                        </li>
+                                        <li class="lang-list-item">
+                                            React.js
+                                            </li>
+                                            <li class="lang-list-item">
+                                                Redux.js
+                                                </li>
+                                                <li class="lang-list-item">
+                                                    Ruby
+                                                    </li>
+                                                    <li class="lang-list-item">
+                                                        Ruby on Rails
+                                                        </li>
+                        <li class="lang-list-item">
+                            Deadline oriented
+                            </li>
+                            <li class="lang-list-item">
+                                Databases
+                                </li>
+                                <li class="lang-list-item">
+                                    Emotionally intelligent
+                                    </li>
+                                    <li class="lang-list-item">
+                                        Leadership
+                                        </li>
+                                        <li class="lang-list-item">
+                                            Peer Mentoring
+                                            </li>
+                                            <li class="lang-list-item">
+                                                Communication
+                                                </li>
+                                                <li class="lang-list-item">
+                                                    Pair Programming
+                                                    </li>
+                                                    <li class="lang-list-item">
+                                                        Time Management
+                                                        </li>
+                                                        <li class="lang-list-item">
+                                                            Peer Reviewing
+                                                            </li>
+                                                            <li class="lang-list-item">
+                                                                API Documentation
+                                                                </li>
+                                                                <li class="lang-list-item">
+                                                                    Rspec
+                                                                    </li>
+                    </ul>
                 </div>
-                <a class="drowdown-icon">
+                <a class="drowdown-icon iconskills" onclick="toggleDropdown()">
                     <span class="span-drop">
-                <img src="../HTML&CSS/icons/active.png">
-                        </span>
+                        <img src="../HTML&CSS/icons/active.png">
+                    </span>
                 </a>
             </div>
         </div>
-    <hr>
+        <hr id="skillsHr" class="hr">
 
     </div>
 
