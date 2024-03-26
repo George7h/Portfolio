@@ -171,6 +171,7 @@ const projects = [{
   },
   button: 'myBtn',
   codeSource: 'https://github.com/George7h/JavaScript-Capstone',
+  SeeLive: 'https://george7h.github.io/JavaScript-Capstone/',
 },
 {
   id: 3,
@@ -346,8 +347,8 @@ function button(id) {
               </div>
               <hr class="hr">
               <div class="project_buttons">
-                    <button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.SeeLive}"> See Live </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>
-                     <button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.codeSource}"> See source </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>
+              ${card.SeeLive ? `<button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.SeeLive}"> See Live </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>` : ''}
+              ${card.codeSource ? `<button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.codeSource}"> See source </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>` : ''}
            </div>
             </div>
          </div>`;
