@@ -48,6 +48,10 @@ button:disabled {
   border: 1px solid #c1c7d0;
 }
 
+.span-drop:hover {
+  cursor: pointer;
+}
+
 /* Minimum phone screen size */
 @media (min-width: 375px) {
   * {
