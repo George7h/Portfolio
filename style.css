@@ -1029,6 +1029,20 @@ button:disabled {
       grid-gap: 12px;
     }
 
+    .project_image {
+      width: 200px;
+      height: auto;
+      transition: ease-in-out 1.5s;
+      border-radius: 15px;
+    }
+
+    .project_image:hover {
+      transform: scale(1.5);
+      top: 50%;
+      left: 50%;
+      z-index: 9999;
+    }
+
     .project:nth-child(even) {
       .project_image {
         order: 2;
