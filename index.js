@@ -2,7 +2,6 @@ const menutoggle = document.querySelector('#menutoggle');
 const menutoggle2 = document.querySelector('#menutoggle2');
 const nav = document.querySelector('nav');
 const navicons = document.querySelectorAll('.navicons');
-const hamburger = document.querySelector('#hamburger');
 
 menutoggle.addEventListener('click', () => {
   nav.classList.toggle('show');
