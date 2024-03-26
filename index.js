@@ -217,7 +217,7 @@ const projects = [{
 {
   id: 5,
   card: 'project5',
-  image: './HTML&CSS/Images/Projectimagedevices.jpg',
+  image: './HTML&CSS/Images/Finalcapstone.svg',
   Title: 'StaySphere',
   history: {
     client: 'Hotel booking System',
