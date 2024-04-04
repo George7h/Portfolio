@@ -596,6 +596,7 @@ hr {
         #modelCloseIcon {
           img {
             cursor: pointer;
+            padding: 5px;
           }
         }
 
