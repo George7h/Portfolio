@@ -352,6 +352,7 @@ hr {
             padding-left: 10px;
             width: 48px;
             height: 48px;
+            transition: ease-in-out 0.5s;
           }
         }
       }
@@ -920,14 +921,30 @@ hr {
             grid-auto-flow: row;
             align-items: center;
             justify-items: flex-start;
-            padding-right: 3rem;
             background: #f7f7f9;
-            padding-left: 1rem;
-            padding-bottom: 1rem;
             border-radius: 8px;
             width: fit-content;
-            padding-top: 1rem;
+            padding: 1rem 3rem 1rem 1rem;
             gap: 1rem;
+            transition: ease-in-out 0.5s;
+          }
+
+          .lang-list-item:hover {
+            background: #6070ff;
+            color: #fbfbfb;
+            border-radius: 8px;
+            transition: ease-in-out 0.5s;
+            padding: 1.2rem 3.2rem 1.2rem 1.2rem;
+
+            .list-item-image {
+              width: 100px;
+              height: 100px;
+              transition: ease-in-out 0.9s;
+            }
+
+            a {
+              color: #fbfbfb;
+            }
           }
         }
       }
