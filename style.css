@@ -1135,8 +1135,8 @@ button:disabled {
         width: inherit;
 
         .project_image_model {
-          /* width: 100%;
-          height: 50vh; */
+          width: 150%;
+          height: 100%;
           object-fit: cover;
         }
       }
