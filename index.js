@@ -347,8 +347,8 @@ function button(id) {
               </div>
               <hr class="hr">
               <div class="project_buttons">
-              ${card.SeeLive ? `<button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.SeeLive}" target="_blank"> See Live </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>` : ''}
-              ${card.codeSource ? `<button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.codeSource}" target="_blank"> See source </a><img style="height: 24px; width: 24px; margin-left: 6px;" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>` : ''}
+              ${card.SeeLive ? `<button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.SeeLive}" target="_blank"> See Live </a><img class="modelLinkBtns" src="./HTML&CSS/buttons/Icon -see live.svg" alt="See live button"></button>` : ''}
+              ${card.codeSource ? `<button class="modelbtn" type="button"><a class="modelbtnlink" href="${card.codeSource}" target="_blank"> See source </a><img class="modelLinkBtns" src="./HTML&CSS/buttons/Icon -GitHub.svg" alt="button to source code"> </button>` : ''}
            </div>
             </div>
          </div>`;
