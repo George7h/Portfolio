@@ -297,6 +297,7 @@ const modal = document.getElementById('model');
 const btn = document.getElementById('btn');
 
 function button(id) {
+  modal.style.opacity = '0';
   modal.style.display = 'flex';
   const card = projects.find((card) => card.id === id);
   const project = document.createElement('div');
@@ -353,11 +354,21 @@ function button(id) {
          </div>`;
 
   modal.appendChild(project);
+  
+  // Using setTimeout to give a slight delay before changing opacity to allow transition to take effect
+  setTimeout(() => {
+    modal.style.opacity = '1';
+    modal.style.transition = 'opacity 2.5s';
+  }, 50);
+  
   setTimeout(() => {
     const span = document.getElementById('modelCloseIcon');
     span.onclick = function Poping() {
-      modal.style.display = 'none';
-      modal.removeChild(project);
+      modal.style.opacity = '0';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        modal.removeChild(project);
+      }, 1000);
     };
   }, 50);
 }
