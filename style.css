@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 button.spanning {
   font-weight: 500;
   font-size: 12px;
@@ -570,7 +574,10 @@ button:disabled {
 
     .modelsection {
       padding: 1rem;
-      width: 90%;
+      position: fixed;
+      top: 20%;
+      height: auto;
+      width: 60%;
       background-color: white;
       border: 1px solid #ebecf0;
       box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
@@ -595,7 +602,7 @@ button:disabled {
 
       .modelimage {
         .project_image_model {
-          width: 100%;
+          width: 80%;
           height: 100%;
           object-fit: cover;
         }
@@ -688,14 +695,26 @@ button:disabled {
 
   /* Work Section */
 
-  header {
+  .navheader {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    border: #7f8cff solid 3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 20px 20px rgba(37, 47, 137, 0.08);
+
     .navbar {
       display: flex;
       padding: 1px;
       padding-left: 15px;
       justify-content: space-between;
       align-items: center;
-      background-color: white;
+      background: none;
       max-width: 100%;
       flex-flow: row;
     }
@@ -728,7 +747,7 @@ button:disabled {
       font-size: 20px;
       display: inline-flex;
       flex-direction: row;
-      background-color: white;
+      background: none;
       height: auto;
       width: auto;
       position: relative;
@@ -738,6 +757,14 @@ button:disabled {
       padding: 10px;
       color: #344563;
       font-size: 15px;
+    }
+
+    .linav :hover {
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      border: #6070ff;
+      background-color: #6070ff;
     }
 
     .info {
