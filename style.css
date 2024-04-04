@@ -575,9 +575,8 @@ button:disabled {
     .modelsection {
       padding: 1rem;
       position: fixed;
-      top: 20%;
       height: auto;
-      width: 60%;
+      width: 90%;
       background-color: white;
       border: 1px solid #ebecf0;
       box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
@@ -586,6 +585,12 @@ button:disabled {
       .header {
         display: flex;
         justify-content: space-between;
+
+        #modelCloseIcon {
+          img {
+            cursor: pointer;
+          }
+        }
 
         .project_history {
           display: grid;
@@ -1087,6 +1092,7 @@ button:disabled {
     align-items: center;
     justify-content: center;
     position: fixed;
+    top: 20%;
     z-index: 1;
     left: 0;
     top: 0;
@@ -1098,7 +1104,7 @@ button:disabled {
 
     .modelsection {
       padding: 1rem;
-      width: 80%;
+      width: 60%;
       background-color: white;
       border: 1px solid #ebecf0;
       box-shadow: 0 48px 48px rgba(37, 47, 137, 0.08);
