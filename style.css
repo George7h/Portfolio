@@ -56,6 +56,12 @@ button:disabled {
   cursor: pointer;
 }
 
+hr {
+  height: 0;
+  border-radius: 15px;
+  background-color: black;
+}
+
 /* Minimum phone screen size */
 @media (min-width: 375px) {
   * {
