@@ -295,7 +295,7 @@ projectMethod();
 
 const modal = document.getElementById('model');
 const btn = document.getElementById('btn');
-const navheader = document.getElementsByClassName('navheader')[0]; // Since getElementsByClassName returns a collection, access the first element using [0]
+const navheader = document.getElementsByClassName('navheader')[0];
 
 function button(id) {
   modal.style.opacity = '0';
@@ -304,7 +304,8 @@ function button(id) {
   const project = document.createElement('div');
   project.classList.add('modelsection');
   project.classList.add(card.card);
-  navheader.style.display = 'none';
+  navheader.style.opacity = '0';
+  navheader.style.transition = 'opacity 2.5s';
   project.innerHTML = `<div class="header">
                <div>
               <h2>${card.Title}</h2>
@@ -369,7 +370,8 @@ function button(id) {
       modal.style.opacity = '0';
       setTimeout(() => {
         modal.style.display = 'none';
-        navheader.style.display = 'block';
+        navheader.style.opacity = '1';
+        navheader.style.transition = 'opacity 2.5s';
         modal.removeChild(project);
       }, 1000);
     };
