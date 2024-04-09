@@ -325,7 +325,7 @@ function button(id) {
                </div>
               
               <span id="modelCloseIcon">
-                    <img src="./HTML&CSS/icons/close popup.svg" alt="close button">
+                    <img id="modelCloseIcon" src="./HTML&CSS/icons/close popup.svg" alt="close button">
               </span>
             </a>
           </div>
